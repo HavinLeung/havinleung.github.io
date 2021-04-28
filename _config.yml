@@ -6,5 +6,4 @@ markdown: kramdown
 highlighter: rouge
 kramdown:
   input: GFM
-
 author: Havin Leung
