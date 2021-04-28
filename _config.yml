@@ -1,0 +1,10 @@
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+
+author: Havin Leung
