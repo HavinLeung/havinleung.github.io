@@ -8,21 +8,30 @@ body {
 	  background-repeat:no-repeat;
 	  background-attachment: fixed;
 }
+hr.about-me {
+    padding-bottom: 0.5rem;
+}
+.navbar {
+    font-size: 1.1rem;
+}
 .spaced {
-    margin-top: 40px;
+    margin-top: 60px;
 }
 .socials {
     padding-bottom:40px;
 }
+.homepage {
+    color: gray;
+}
 body {
     font-family: 'Open Sans', sans-serif !important;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: lighter;
 }
 .name-container{
     text-align: center;
 }
-.name-container .name {
+.name {
     color: black;
     font-weight: lighter;
     letter-spacing: 0.1em;
