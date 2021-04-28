@@ -11,6 +11,9 @@ body {
 .spaced {
     margin-top: 40px;
 }
+.socials {
+    padding-bottom:40px;
+}
 body {
     font-family: 'Open Sans', sans-serif !important;
     font-size: 1.1rem;
@@ -27,6 +30,16 @@ body {
 a {
     color:darkblue;
 }
+blockquote {
+    background: #ddd;
+    border-left: 4px solid #bbb;
+    padding: 0.5em 0.5em 0.5em 0.5em;
+}
+blockquote p {
+    display: inline;
+}
+
+/* socials stuff */
 ul.icons{
 	  list-style: none;
 	  padding-left: 0;
