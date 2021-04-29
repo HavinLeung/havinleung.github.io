@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Exhaustively testing a randomized blackbox interpreter
-usesmathjax: false
+usesmathjax: true
 ---
 Suppose you have a black box interpreter that runs some programming language. The interpreter is allowed to have some randomness, but it's entirely supplied by a `give_me_a_random_number` function that you pass into it. How do we exhaustively test and enumerate all possible execution paths?
 
@@ -194,4 +194,7 @@ This could be confusing, so I made an illustration to showcase the core logic.
 ## Conclusion
 
 That's it! By updating some global state on every `randomizer` call, we can enumerate all possible paths of execution. As a result, for small programs its feasible generate all possible outputs. Now it's possible to test that two different interpreters indeed do the same thing for a program, even if the program has some nondeterminisim in it!
+
+Note: By small program, I mean small interns of "branch points", not LoC.
+Even a very low LoC program could cause $O($a lot$)$ of work.
 
