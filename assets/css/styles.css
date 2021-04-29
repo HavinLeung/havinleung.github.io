@@ -2,11 +2,9 @@ html {
     height: 100%;
 }
 body {
-    position:relative;
-	  min-height:100vh;
 	  background:linear-gradient(45deg, rgba(200,150,150,0.15), rgba(50,150,200,0.15));
-	  background-repeat:no-repeat;
 	  background-attachment: fixed;
+    padding-bottom: 40px;
 }
 @media print {
     body {
@@ -21,9 +19,6 @@ hr.about-me {
 }
 .spaced {
     margin-top: 60px;
-}
-.socials {
-    padding-bottom:40px;
 }
 @media print{
     .socials {
