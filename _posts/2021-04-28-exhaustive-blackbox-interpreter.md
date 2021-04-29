@@ -1,18 +1,23 @@
 ---
 layout: post
 title: Exhaustively testing a randomized blackbox interpreter
+usesmathjax: false
 ---
 Suppose you have a black box interpreter that runs some programming language. The interpreter is allowed to have some randomness, but it's entirely supplied by a `give_me_a_random_number` function that you pass into it. How do we exhaustively test and enumerate all possible execution paths?
 
 ## Premise
 
-Recently for uWaterloo's [CS 442](https://student.cs.uwaterloo.ca/~cs442/W21/) class, I had to write an interpreter for a toy language. It was a very simple Object Oriented language with basic support for concurrency. Since it was inspired by [π-calculus](https://en.wikipedia.org/wiki/Π-calculus), naturally there is some nondeterminism. For example, consider 3 processes. If process 1 wants to send value `foo`, and process 2 and 3 both want to receive it, who should get it?
+Recently for uWaterloo's [CS 442](https://student.cs.uwaterloo.ca/~cs442/W21/) class, I had to write an interpreter for a toy language.
+It was a very simple Object Oriented language with basic support for concurrency.
+Since it was inspired by [pi-calculus](https://en.wikipedia.org/wiki/Π-calculus), naturally there is some nondeterminism.
+For example, consider 3 processes.
+If process 1 wants to send value `foo`, and process 2 and 3 both want to receive it, who should get it?
 
 The possible concurrent steps in the language were:
 
 1. `spawn`: spawns a new process
 2. `send/receive`: send/receive a message over a channel
-   * e.g. `send("channel_name", foo)` sends `foo` to some process that is waiting to receive via `bar = receive("channel_name")`
+   * e.g. `send("channel_name", foo)` sends `foo` to some process that is waiting to receive via `receive("channel_name", &bar)`
 
 The way we ran the interpreter was as follows:
 
@@ -30,7 +35,6 @@ My teacher ([Professor Richards](https://the.gregor.institute)) noted that for s
 Consider the following pseudocode:
 
 {% highlight python linenos %}
-# main.py
 def main():
     spawn(Foo)
     spawn(Bar)
@@ -62,7 +66,7 @@ If we choose to run step 8, then we eventually get stuck at `[3, 12]`.
 
 <figure class="fig">
     <img src="/assets/images/2021-04-28-exhaustive-blackbox-interpreter/image-20210428184554691.png" alt="execution tree">
-    <figcaption>Figure 1 - A simple execution tree for main.py, truncated at depth 2</figcaption>
+    <figcaption>Figure 1 - A simple execution tree for the pseudocode, truncated at depth 2</figcaption>
 </figure>
 
 Now we note a few things:
@@ -71,6 +75,7 @@ Now we note a few things:
 * Given a program and a deterministic `randomizer` function, our interpreter is entirely deterministic
   * For example, the first `randomizer` call when executing the Main function will always be `randomizer(2)`. Similarly, the left child of Main will always have a `randomizer(3)` call. This follows because the only source of non-determinism is provided by the `randomizer` function.
 * This implies that our execution tree is static and doesn't change across runs.
+* We can discover the execution tree by continuously re-running the program with the interpreter, choosing a different path each time
 
 Given this, notice that we can dynamically build up an execution tree to enumerate all possible executions. Every `randomizer(n)` call is a "branch point" with `n` different children. We simply need to pass in a custom `randomizer` function that helps us keep track of state on every call!
 
@@ -189,3 +194,4 @@ This could be confusing, so I made an illustration to showcase the core logic.
 ## Conclusion
 
 That's it! By updating some global state on every `randomizer` call, we can enumerate all possible paths of execution. As a result, for small programs its feasible generate all possible outputs. Now it's possible to test that two different interpreters indeed do the same thing for a program, even if the program has some nondeterminisim in it!
+
