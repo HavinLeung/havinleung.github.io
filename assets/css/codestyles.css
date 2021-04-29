@@ -1,5 +1,8 @@
 .highlight table td { padding: 5px; }
 .highlight table pre { margin: 0; }
+.highlight pre {
+    color: inherit;
+}
 .highlight, .highlight .w {
   color: #d0d0d0;
   background-color: #151515;

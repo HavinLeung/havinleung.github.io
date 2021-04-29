@@ -8,6 +8,11 @@ body {
 	  background-repeat:no-repeat;
 	  background-attachment: fixed;
 }
+@media print {
+    body {
+        background: white;
+    }
+}
 hr.about-me {
     padding-bottom: 0.5rem;
 }
@@ -19,6 +24,11 @@ hr.about-me {
 }
 .socials {
     padding-bottom:40px;
+}
+@media print{
+    .socials {
+        display: none;
+    }
 }
 .homepage {
     color: gray;
@@ -46,6 +56,16 @@ blockquote {
 }
 blockquote p {
     display: inline;
+}
+
+figure.fig {
+    padding: 2em;
+}
+figure.fig img {
+    width: 100%;
+}
+figure.fig figcaption {
+    text-align: center;
 }
 
 /* socials stuff */
