@@ -2,6 +2,9 @@
 layout: default
 title: Test
 ---
+
+You've stumbled across my scratchpad!
+
 # foo
 
 ## bar
