@@ -8,7 +8,7 @@ title: Blog
 
 ---
 ### [{{ post.title }}]({{ post.url }})
-Posted on {{ post.date | date_to_string }} | by {{ site.author }}
+{{ post.date | date: "%B %d, %Y" }}
 
 {{ post.excerpt }}
 
