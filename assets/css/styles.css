@@ -54,7 +54,7 @@ blockquote p {
 }
 
 figure.fig {
-    padding: 2em;
+    padding: 2em 0 2em 0;
 }
 figure.fig img {
     width: 100%;

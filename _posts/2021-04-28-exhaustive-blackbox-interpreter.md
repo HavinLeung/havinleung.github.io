@@ -197,4 +197,3 @@ That's it! By updating some global state on every `randomizer` call, we can enum
 
 Note: By small program, I mean small interns of "branch points", not LoC.
 Even a very low LoC program could cause $O($a lot$)$ of work.
-
