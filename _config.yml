@@ -8,3 +8,4 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 author: Havin Leung
+permalink: pretty

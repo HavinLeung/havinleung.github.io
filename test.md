@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Test
+permalink: /scratch
 ---
 
 You've stumbled across my scratchpad!
