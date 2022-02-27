@@ -10,7 +10,7 @@ Moving from Google Photos to some other photo management software (Apple Photos 
 Sure, you can easily take out all your photos by simply using [Google Takeout](https://takeout.google.com/settings/takeout),
 but there's some annoying gotchas.
 
-1. Your media's EXIF data may or may not sane
+1. Your media's EXIF data may or may not be what you expect
   - e.g. Some photos I took in 2015 were dated to 2022 in EXIF.
   This would break the photo sorting in other software.
 2. For an image called `image.jpg`, Google Photos saves metadata like GPS data, photo timestamp, etc.. into `image.jpg.json` instead of embedding it into `image.jpg`'s exif data
