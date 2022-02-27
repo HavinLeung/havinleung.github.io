@@ -47,7 +47,7 @@ Iterating a few times, I noticed:
 - Live photos were exported as `image.jpg` and `image.mp4`, with `image.jpg.json` as the metadata file
 
 Accounting for all of this weirdness (source code [here](https://github.com/HavinLeung/google-takeout/blob/master/process.py)),
-my `corresponding_json` function was able to find the corresponding json for all ~7,000 files I had taken out.
+my `corresponding_json` function was able to find the corresponding json for all ~7,000 photos/videos I had taken out.
 
 To make the exiftool command linked above work as expected, I just essentially did 
 ```python
