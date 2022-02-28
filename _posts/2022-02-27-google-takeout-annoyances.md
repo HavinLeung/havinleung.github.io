@@ -27,6 +27,7 @@ I googled a bunch to look for a solution and found 2 useful but incomplete pages
 1. [This blog post](https://legault.me/post/correctly-migrate-away-from-google-photos-to-icloud) provides an exiftool
 command to take the useful JSON metadata like creation time, GPS coordinates, etc.. and embeds it into the media files
     - Unfortunately they assume that the naming of the json files is consistent
+        - This only fixes media like `image.jpg` if `image.jpg.json` exists
 2. [This Github project](https://github.com/mattwilson1024/google-photos-exif) is a node project that populates the `DateTimeOriginal` EXIF field
     - The author [notes](https://github.com/mattwilson1024/google-photos-exif#how-are-media-files-matched-to-json-sidecar-files) the 
     inconsistent JSON naming and has heuristics to work around this
