@@ -42,6 +42,7 @@ I wrote a `corresponding_json` function and iterated on it, starting with the si
 Iterating a few times, I noticed:
 
 - `image-edited.jpg` generally corresponds to `image.jpg`
+    - "edited" is localized to your language. For example in Danish, it would be `image-redigeret.jpg` that corresponds to `image.jpg`
 - The `.json` files appear to have cap of 51 characters (most of the time)
     - If it's a duplicate file like `image(1).jpg`, then it can actually be 54 characters
     (note that the `(1)` didn't count towards their 51 character limit)
